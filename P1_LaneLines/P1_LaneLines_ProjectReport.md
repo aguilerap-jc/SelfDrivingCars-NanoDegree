@@ -1,11 +1,4 @@
 # **Finding Lane Lines on the Road** 
----
-**Finding Lane Lines on the Road**
-
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
 
 [//]: # (Image References)
 
@@ -30,8 +23,6 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image6]: ./images/weighted.png "Grayscale"
-
----
 
 ### 1. Lane Detection pipeline
 
@@ -88,14 +79,12 @@ This extended lines are going to use now to draw the lines to be able to see the
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+The current pipeline is highly sensible to light and noise from other things that could be similar to a line, the threshold for the houglines could be easily be mistaken and instead of considering the doted line as our relevant line could take some other thing like a trailer or semi that could be going by at the same time. 
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+It's also depending highly on the ROI and different lines could cause different effects on the filtering that we are creating.
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+Using other colorspace to process the image could be usefull to reduce the dependency on colors. 
 
-Another potential improvement could be to ...
+Create a more robust logic on extracting the slope of the lines as well as for detecting the right line, by only considering two instead of tracing any possible line. 
